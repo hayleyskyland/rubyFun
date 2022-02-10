@@ -1,17 +1,24 @@
-#!/usr/bin/env ruby
+################## NOTES ################## 
+  
+  #!/usr/bin/env ruby
 
 # run in terminal with `ruby ri20min.rb`
 
+################## CREATE CLASS ################## 
+
 class MegaGreeter
+
+  # create object
+
   attr_accessor :names
 
-  # create object with default `@names` of `World`
+  #  assign `@names` to default value of `World`
 
   def initialize(names = "World")
     @names = names
   end
 
-  # say hi to everyone
+  ################## SAY HI ################## 
 
   def say_hi
 
@@ -23,33 +30,41 @@ class MegaGreeter
     # if `@names` is an array, iterate
 
     elsif @names.respond_to?("each")
-
       @names.each do |name|
         puts "Hello #{name}!"
       end
 
+    # if `@names` is a string, put it  
+
     else
-
-      # if `@names` is a string, put it
-
       puts "Hello #{@names}!"
     end
+
   end
 
-  # say bye to everyone
+  ################## SAY BYE ################## 
 
   def say_bye
+
+    # if `@names` is an `nil`, put `...`
+
     if @names.nil?
       puts "..."
+
+    # if `@names` is an array, join with commas
+
     elsif @names.respond_to?("join")
 
-      # join list elements with commas
-
       puts "Goodbye #{@names.join(", ")}. Come back soon!"
+
+    # if `@names` is a string, put it  
+
     else
       puts "Goodbye #{@names}. Come back soon!"
     end
+
   end
+ 
 end
 
 
