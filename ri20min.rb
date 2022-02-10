@@ -27,7 +27,7 @@ class MegaGreeter
     if @names.nil?
       puts "..."
 
-    # if `@names` is an array, iterate
+    # if `@names` is an array, iterate with ruby's version of forEach()
 
     elsif @names.respond_to?("each")
       @names.each do |name|
@@ -67,6 +67,15 @@ class MegaGreeter
  
 end
 
+################## KICK OFF SCRIPT ################## 
+
+# `__FILE__` is the magic variable that contains the name of the current file.
+
+# `$0` is the name of the file used to start the program.
+
+# "If this is the main file being used, then do this."
+
+# The code here allows does NOT execute a file that should be used as a library, but it DOES execute a file that's supposed to be an executable.
 
 if __FILE__ == $0
   mg = MegaGreeter.new
@@ -85,7 +94,8 @@ if __FILE__ == $0
   mg.say_hi
   mg.say_bye
 
-  # change `@names` to `nil`
+  # reassign `@names` to `nil`
+
   mg.names = nil
   mg.say_hi
   mg.say_bye
