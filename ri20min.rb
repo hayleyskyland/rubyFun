@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# run in terminal with `ruby ri20min.rb`
+
 class MegaGreeter
   attr_accessor :names
 
