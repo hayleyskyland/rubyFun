@@ -3,12 +3,14 @@
 class MegaGreeter
   attr_accessor :names
 
-  # Create the object
+  # create object with default `name` of `World`
+
   def initialize(names = "World")
     @names = names
   end
 
-  # Say hi to everybody
+  # say hi to everyone
+
   def say_hi
     if @names.nil?
       puts "..."
@@ -22,15 +24,16 @@ class MegaGreeter
     end
   end
 
-  # Say bye to everybody
+  # say bye to everyone
+
   def say_bye
     if @names.nil?
       puts "..."
     elsif @names.respond_to?("join")
       # Join the list elements with commas
-      puts "Goodbye #{@names.join(", ")}.  Come back soon!"
+      puts "Goodbye #{@names.join(", ")}. Come back soon!"
     else
-      puts "Goodbye #{@names}.  Come back soon!"
+      puts "Goodbye #{@names}. Come back soon!"
     end
   end
 end
@@ -41,18 +44,19 @@ if __FILE__ == $0
   mg.say_hi
   mg.say_bye
 
-  # Change name to be "Zeke"
-  mg.names = "Zeke"
+  # reassign `name` to "Human"
+  
+  mg.names = "Human"
   mg.say_hi
   mg.say_bye
 
-  # Change the name to an array of names
-  mg.names = ["Albert", "Brenda", "Charles",
-              "Dave", "Engelbert"]
+  # reassign `name` to array of names
+
+  mg.names = ["Hayley", "Drew", "Charmmykitty", "Embercat", "Kittay"]
   mg.say_hi
   mg.say_bye
 
-  # Change to nil
+  # change `name`` to `nil`
   mg.names = nil
   mg.say_hi
   mg.say_bye
